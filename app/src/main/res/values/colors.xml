@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#9f6c6f80</color>
+    <color name="colorAccent">#0f50f4</color>
+
+    <color name="red">#ff0000</color>
+
+    <color name="cityColor">#d300c4ff</color>
+    <color name="date">#714ef1</color>
+    <color name="blank">#313233</color>
+
+    <color name="zise">#26d9b8</color>
+
+    <color name="whil">#ffffff</color>
+
+
+</resources>

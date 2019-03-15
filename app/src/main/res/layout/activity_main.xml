@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reLa"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mr"
+    tools:context="com.example.administrator.weatherdemo.MainActivity">
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:id="@+id/re1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/setCity"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.55"
+                    android:background="@drawable/lo_button"
+                    android:text="设置" />
+
+                <TextView
+                    android:id="@+id/city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="城市"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/refresh"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:alpha="0.55"
+                    android:background="@drawable/lo_button"
+                    android:text="刷新" />
+            </RelativeLayout>
+<RelativeLayout
+    android:id="@+id/re2"
+    android:layout_below="@+id/re1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/wendu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:text="温度"
+        android:textColor="#ffffff"
+        android:textSize="60sp" />
+
+    <TextView
+    android:textSize="20sp"
+
+    android:layout_below="@+id/wendu"
+    android:layout_alignLeft="@+id/wendu"
+    android:layout_alignRight="@+id/wendu"
+
+    android:textColor="@color/whil"
+    android:id="@+id/todayType"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="类型" />
+
+    <TextView
+        android:textSize="15sp"
+
+        android:layout_below="@+id/todayType"
+        android:layout_alignLeft="@+id/wendu"
+        android:layout_alignRight="@+id/wendu"
+
+        android:textColor="@color/whil"
+        android:id="@+id/zhil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="质量" />
+</RelativeLayout>
+
+            <RelativeLayout
+                android:padding="20dp"
+                android:layout_marginBottom="100dp"
+                android:id="@+id/todayLayout"
+                android:layout_below="@+id/re2"
+                android:background="#9b534d4d"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="当前日期："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:textColor="@color/whil"
+                            android:id="@+id/todayTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="输入城市有误" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="风向/风力："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:textColor="@color/whil"
+                            android:id="@+id/fen"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_below="@+id/relativeLayout"
+                    android:id="@+id/todayImage"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+
+                    android:layout_centerHorizontal="true"
+                    app:srcCompat="@drawable/weizhi" />
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/todayImage"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="温度范围："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:textColor="@color/whil"
+                            android:id="@+id/todaytem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="温馨提示："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:textColor="@color/whil"
+                            android:id="@+id/todayNotice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:id="@+id/line2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/todayLayout"
+                android:background="#9b534d4d"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="明天日期："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/tomTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="天气类型："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/tomType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/tomImage"
+                        android:layout_width="140dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/weizhi" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="温度范围："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/tomTem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line2"
+                android:layout_marginTop="100dp"
+                android:background="#9b534d4d"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="后天日期："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/afterTomTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="天气类型："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/afterTomType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/afterTomImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/weizhi" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp">
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="温度范围："
+                            android:textColor="@color/zise"
+                            android:textSize="20sp"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:id="@+id/afterTomTem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="30dp"
+                            android:gravity="center"
+                            android:text="输入城市有误"
+                            android:textColor="@color/whil" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:alpha="0.5"
+        android:visibility="gone">
+
+    </WebView>
+</RelativeLayout>
